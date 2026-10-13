@@ -20,6 +20,10 @@ It scans source code for hardcoded secrets, audits package lockfiles against the
 
 ---
 
+[![Architecture Diagram](https://img.shields.io/badge/View-GitDiagram-blue)](https://gitdiagram.com/Shigosag/GitShield)
+
+---
+
 ## Prerequisites
 
 - **[Go](https://go.dev/dl/)** (v1.22 or higher)

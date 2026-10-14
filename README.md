@@ -28,44 +28,46 @@ It scans source code for hardcoded secrets, audits package lockfiles against the
 
 ---
 
-## Prerequisites
+## Installation
 
-- **[Go](https://go.dev/dl/)** (v1.22 or higher)
-- **[Git](https://git-scm.com/)**
+### Option 1: Pre-built Binaries (No Go Required)
+
+Download the executable for your OS directly from [Releases](https://github.com/Shigosag/GitShield/releases/latest):
+
+| OS | Architecture | Download |
+|---|---|---|
+| **Windows** | x86_64 / amd64 | [`gitshield-windows-amd64.exe`](https://github.com/Shigosag/GitShield/releases/latest/download/gitshield-windows-amd64.exe) |
+| **Linux** | x86_64 / amd64 | [`gitshield-linux-amd64`](https://github.com/Shigosag/GitShield/releases/latest/download/gitshield-linux-amd64) |
+| **macOS** | Apple Silicon (M1/M2/M3/M4) | [`gitshield-darwin-arm64`](https://github.com/Shigosag/GitShield/releases/latest/download/gitshield-darwin-arm64) |
+
+*Rename the file to `gitshield` (or `gitshield.exe` on Windows) and add it to your PATH.*
 
 ---
 
-## Installation
+### Option 2: Build from Source (Requires Go 1.22+)
 
-### Windows (PowerShell / Command Prompt)
+<details>
+<summary>Click to view Go build commands</summary>
 
+#### Windows (PowerShell / Command Prompt)
 ```powershell
-# Clone the repository
 git clone https://github.com/Shigosag/GitShield.git
 cd gitshield
-
-# Download dependencies & build
 go mod tidy
 go build -o gitshield.exe ./cmd/gitshield
-
-# (Optional) Install globally to Go bin
 go install ./cmd/gitshield
 ```
 
 ### Linux & macOS (Bash / Zsh)
 
 ```bash
-# Clone the repository
 git clone https://github.com/Shigosag/GitShield.git
 cd gitshield
-
-# Download dependencies & build
 go mod tidy
 go build -o gitshield ./cmd/gitshield
-
-# (Optional) Move to system path
 sudo mv gitshield /usr/local/bin/
 ```
+</details>
 
 ---
 

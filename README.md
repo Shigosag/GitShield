@@ -10,6 +10,10 @@ It scans source code for hardcoded secrets, audits package lockfiles against the
 
 ---
 
+![GitShield Terminal Preview](screenshots/preview.png)
+
+---
+
 ## Key Features
 
 - 🔑 **Secret Detection**: Pattern matching for AWS Access Keys, GitHub Personal Access Tokens, Stripe API Keys, OpenAI Keys, and committed `.env` secrets.

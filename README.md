@@ -83,14 +83,25 @@ gitshield init
 ### 2. Verify Installation (Quick Test)
 Verify that GitShield catches real secrets before using it on real code:
 
+**1. Create a dummy test secret**
+
+*Windows Command Prompt (CMD):*
+```cmd
+echo AWS_KEY=AKIAIOSFODNN7EXAMPLE>test_secret.txt & rem gitshield:ignore
+```
+
+*Linux / macOS / PowerShell:*
 ```bash
-# 1. Create a dummy test secret
-echo "AWS_KEY=AKIA""IOSFODNN7EXAMPLE" > test_secret.txt
+echo "AWS_KEY=AKIAIOSFODNN7EXAMPLE" > test_secret.txt # gitshield:ignore
+```
 
-# 2. Run scan (will flag CRITICAL)
+**2. Run scan (will flag CRITICAL)**
+```bash
 gitshield scan
+```
 
-# 3. Clean up the dummy file
+**3. Clean up the dummy file**
+```bash
 del test_secret.txt       # Windows PowerShell / CMD
 rm test_secret.txt        # Linux / macOS
 ```

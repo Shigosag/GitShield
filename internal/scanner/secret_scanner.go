@@ -53,6 +53,12 @@ func (s *SecretScanner) ScanContent(filePath string, content []byte) ([]Finding,
 	for scanner.Scan() {
 		lineNum++
 		line := scanner.Text()
+
+		// Skip any line marked with gitshield:ignore
+		if strings.Contains(line, "gitshield:ignore") {
+			continue
+		}
+
 		trimmed := strings.TrimSpace(line)
 
 		if strings.HasPrefix(trimmed, "//") || strings.HasPrefix(trimmed, "#") {
